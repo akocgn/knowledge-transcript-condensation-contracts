@@ -2,6 +2,7 @@ package de.imst.knowledge.contracts.transcriptcondensation;
 
 import de.imst.knowledge.contracts.transcriptcondensation.util.ObjectPreconditions;
 import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
 
 import java.time.Instant;
 import java.util.List;
@@ -22,7 +23,7 @@ import java.util.List;
  */
 public record ReadableTranscript(
         @Nonnull String transcriptId,
-        @Nonnull String sourceTranscriptId,
+        @Nullable String sourceTranscriptId,
         @Nonnull String title,
         @Nonnull String language,
         @Nonnull Instant createdAt,
@@ -34,7 +35,6 @@ public record ReadableTranscript(
 ) {
     public ReadableTranscript {
         ObjectPreconditions.assertNotNull(transcriptId, "transcriptId must not be null");
-        ObjectPreconditions.assertNotNull(sourceTranscriptId, "sourceTranscriptId must not be null");
         ObjectPreconditions.assertNotNull(title, "title must not be null");
         ObjectPreconditions.assertNotNull(language, "language must not be null");
         ObjectPreconditions.assertNotNull(createdAt, "createdAt must not be null");

@@ -88,17 +88,6 @@ class ReadableTranscriptTest {
     }
 
     @Test
-    @DisplayName("constructor throws IllegalArgumentException when sourceTranscriptId is null")
-    @SuppressWarnings("DataFlowIssue")
-    void constructorThrowsOnNullSourceTranscriptId() {
-        assertThatThrownBy(() -> new ReadableTranscript(
-                "transcript-001", null, "Title", "en",
-                createdAt, metadata, List.of(), List.of(), List.of(), List.of()
-        )).isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("sourceTranscriptId must not be null");
-    }
-
-    @Test
     @DisplayName("constructor throws IllegalArgumentException when title is null")
     @SuppressWarnings("DataFlowIssue")
     void constructorThrowsOnNullTitle() {
